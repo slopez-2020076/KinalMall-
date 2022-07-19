@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteClienteIndividual" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5c0efe98-baef-436e-a062-024a42d0bed1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="890"/>
+	<parameter name="codCliente" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call sp_ReporteClienteIndividual($P{codCliente});]]>
+	</queryString>
+	<field name="codigoCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidoCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccionCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoLocal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoAdministracion" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoTipoCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saldoFavor" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saldoContra" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mesesPendientes" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="disponibilidad" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorLocal" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorAdministracion" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoCuentaPorCobrar" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroFactura" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mes" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorNetoPago" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estadoPago" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="572" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="752" height="572" uuid="4d72b21e-a8c5-47c3-9e02-76addd67c26c"/>
+				<imageExpression><![CDATA["images\\MarcoHorizontal.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="143" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="25" width="337" height="38" backcolor="#0F355C" uuid="3dca767c-c77a-46e4-a35a-f1b39390d0c7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="32" y="25" width="222" height="38" forecolor="#CCCCCC" uuid="178c9ee9-8ed7-47a0-b0f6-3ec7b874aad0"/>
+				<textElement>
+					<font fontName="Tahoma" size="26" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporte Cliente]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="251" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="172" width="752" height="38" backcolor="#0F355C" uuid="e54dac41-a7a8-418a-88b6-b59522ea1954"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="752" height="38" backcolor="#0F355C" uuid="2723692d-ef1c-485d-96a3-7eeda3711a34"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="15" y="18" width="88" height="20" forecolor="#CCCCCC" uuid="97d11951-1441-46ac-8962-7d29791df9f9"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="18" width="89" height="20" forecolor="#CCCCCC" uuid="f352f4e0-7f25-4262-87e9-4f6e063c9a6d"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="18" width="90" height="20" forecolor="#CCCCCC" uuid="9bc9a93f-deae-408e-9e83-142769c46a1d"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="18" width="100" height="20" forecolor="#CCCCCC" uuid="7ad889e2-081a-4851-88ab-f544ace7bd40"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="471" y="18" width="100" height="20" forecolor="#CCCCCC" uuid="0894bfd8-210a-4fa2-9232-e3e876080d09"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="640" y="18" width="46" height="20" forecolor="#CCCCCC" uuid="dfeef6fa-88ee-403d-9f1c-364da85ef8f3"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="124" y="49" width="89" height="20" uuid="7e981153-8873-4807-8b05-aced339727be"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="452" y="49" width="135" height="20" uuid="7d3229df-3742-425f-8bbb-08d686bce843"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccionCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="226" y="49" width="90" height="20" uuid="3f2b3ced-baa0-4c1d-b4d8-9611933bcf25"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellidoCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="327" y="49" width="100" height="20" uuid="82757855-ba69-44f1-bf51-a5bfe4cb7d20"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefonoCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="49" width="88" height="20" uuid="8b31e269-51c5-498e-b73d-1c418230d100"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="35"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="607" y="49" width="126" height="20" uuid="93a7be6b-87de-4e38-8d0a-2de19a5b05d7"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="0" y="85" width="752" height="38" backcolor="#0F355C" uuid="27d6f801-01d5-437e-a69a-615efa71ab88"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="103" width="84" height="20" forecolor="#CCCCCC" uuid="07ff96b4-b941-4b8e-87c4-7b54fcbd023f"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Admin.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="103" width="60" height="20" forecolor="#CCCCCC" uuid="d594b9c9-ade7-4f6f-8c8e-8d1872c9342f"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cod. Local]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="103" width="72" height="20" forecolor="#CCCCCC" uuid="b6870f23-a158-44aa-88f8-460231330ac3"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saldo Favor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="103" width="73" height="20" forecolor="#CCCCCC" uuid="89477d81-7f8f-470e-83f0-4dc4650d8350"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saldo Contra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="341" y="103" width="108" height="20" forecolor="#CCCCCC" uuid="674d0f38-de6a-4341-8520-e4d2a1841504"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Meses Pendientes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="103" width="84" height="20" forecolor="#CCCCCC" uuid="adca2dc0-1590-4546-88a8-a9d2d881f3ae"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Disponibilidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="554" y="103" width="75" height="20" forecolor="#CCCCCC" uuid="6c8f9bc7-ba34-4088-829c-b8492d340f6b"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Local]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="629" y="103" width="133" height="20" forecolor="#CCCCCC" uuid="a33ae123-54e6-4b48-9ac7-b15a65161696"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Administración]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="96" y="133" width="60" height="20" uuid="7bd3f977-33f8-4c74-b6b1-1da72ea7c576"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="25"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoLocal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="133" width="84" height="20" uuid="9c9625c9-cd05-4b53-8dc0-620e114cdef5"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="35"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoAdministracion}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="6" y="69" width="742" height="3" backcolor="#0F355C" uuid="36edcf86-b8ff-40ea-a448-19a41f956f93"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="169" y="133" width="72" height="20" uuid="e2782958-4d8b-4fa9-b3ba-ecf6e40be783"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{saldoFavor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="554" y="133" width="75" height="20" uuid="da8580bb-1b7f-4980-ace4-905d8463d550"/>
+				<textElement>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorLocal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="254" y="133" width="73" height="20" uuid="c9a727bb-ac11-4172-8167-18306de3a67a"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{saldoContra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="133" width="108" height="20" uuid="703d2285-5ef7-44c3-97cb-ca1a7856fb57"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="40"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mesesPendientes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="133" width="84" height="20" uuid="49dfa7e6-f72b-486f-b54e-02b2f7097fe5"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="25"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{disponibilidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="133" width="94" height="20" uuid="7a742cfe-6a04-49fe-bc39-fcc8395cca87"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorAdministracion}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="6" y="153" width="742" height="3" backcolor="#0F355C" uuid="9e8cfc8f-b3ba-46c4-b0b2-a6506cc4eb7d"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="15" y="220" width="141" height="20" uuid="8403e5d2-2dd4-4f60-8ddd-675cf95f4267"/>
+				<textElement>
+					<paragraph leftIndent="60"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoCuentaPorCobrar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="190" width="151" height="20" forecolor="#CCCCCC" uuid="aa36b1ea-883b-4223-88fe-e85ebeea1b4d"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Cuenta Por Cobrar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="190" width="100" height="20" forecolor="#CCCCCC" uuid="3a3b41e4-7189-417f-a4c6-2f7c67c8ffb2"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número Factura]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="220" width="100" height="20" uuid="f4d9bb79-9c47-4359-8a5f-05aca1f18a4d"/>
+				<textElement>
+					<paragraph leftIndent="35"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroFactura}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="337" y="190" width="40" height="20" forecolor="#CCCCCC" uuid="0ae4800b-9e19-48c9-abb2-d216e92103fe"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Año]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="327" y="220" width="67" height="20" uuid="98bb0349-9db9-409d-992e-240b4a7fd6a5"/>
+				<textElement>
+					<paragraph leftIndent="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="220" width="56" height="20" uuid="3d5f9a8c-d931-4977-8fab-45edc6a83c96"/>
+				<textElement>
+					<paragraph leftIndent="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="426" y="190" width="34" height="20" forecolor="#CCCCCC" uuid="a7a14042-a779-4671-8414-3c988465bf13"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="497" y="190" width="100" height="20" forecolor="#CCCCCC" uuid="ba7b8398-2392-4a31-8478-1811eb74f99e"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Neto Pago]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="497" y="220" width="100" height="20" uuid="281d1f0b-611c-49c2-924e-4e67cccbaf55"/>
+				<textElement>
+					<paragraph leftIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorNetoPago}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="629" y="190" width="100" height="20" forecolor="#CCCCCC" uuid="a5112744-50de-47ac-affe-1c53839af51b"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado Pago]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="629" y="220" width="100" height="20" uuid="33bebc75-a3af-4d1d-8b3b-7efc9c641f02"/>
+				<textElement>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estadoPago}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="6" y="237" width="742" height="3" backcolor="#0F355C" uuid="8ff7eadb-0326-4947-8440-2eb45d24bf5c"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="53" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="554" y="0" width="182" height="20" uuid="818f8f49-325a-4918-b990-caf272653a85"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Santiago Adolfo López Ramírez]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

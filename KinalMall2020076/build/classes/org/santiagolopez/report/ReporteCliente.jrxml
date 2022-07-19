@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteCliente" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d0d362e-6cdf-4686-9e99-53b30a1a285b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="28"/>
+	<parameter name="descript" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select * from TipoCliente TC inner join Clientes C on
+	TC.codigoTipoCliente = C.codigoTipoCliente
+		where TC.descripcion = $P{descript};]]>
+	</queryString>
+	<field name="codigoTipoCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidoCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccionCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoLocal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoAdministracion" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="descripcion_1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{descripcion}]]></variableExpression>
+	</variable>
+	<variable name="codigoTipoCliente_1" class="java.lang.Integer" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{codigoTipoCliente}]]></variableExpression>
+	</variable>
+	<variable name="descripcion_2" class="java.lang.Integer" resetType="Page" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{descripcion}]]></variableExpression>
+	</variable>
+	<variable name="descripcion_3" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{descripcion}]]></variableExpression>
+	</variable>
+	<background>
+		<band height="572" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="752" height="572" uuid="679e65bf-ae3f-4980-960c-e83080e6d8a8"/>
+				<imageExpression><![CDATA["C:\\Users\\Santiago\\Documents\\NetBeansProjects\\KinalMall2020076\\src\\org\\santiagolopez\\images\\Sin título-1.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="124" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="171" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="12" y="45" width="389" height="55" backcolor="#0F355C" uuid="5d7c03a8-4b82-4b18-8b8e-2549a0538289"/>
+			</rectangle>
+			<textField evaluationTime="Page">
+				<reportElement x="195" y="114" width="100" height="20" uuid="43c51907-d622-4fa5-b513-30af9010b2fb"/>
+				<textElement>
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{codigoTipoCliente_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="51" y="114" width="129" height="20" uuid="71a30c59-dc7a-4cda-a389-8be96196cb41"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código TipoCliente: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="51" y="144" width="129" height="20" uuid="6ef13331-25ce-42be-ba9f-65de3e9b3199"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="195" y="144" width="149" height="20" uuid="690e191d-7212-4f2a-80f3-de80bab592b7"/>
+				<textElement>
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="51" y="55" width="325" height="45" forecolor="#CCCCCC" uuid="cf36ebf4-0e94-4e8d-b8c5-a9e2ce560a10"/>
+				<textElement>
+					<font fontName="Tahoma" size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Clientes]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="64" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="27" width="752" height="23" backcolor="#0F355C" uuid="076a943b-2659-433d-8fc6-226b2410b426"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="12" y="30" width="96" height="20" forecolor="#CCCCCC" uuid="b8b93df9-8101-41b8-8b39-ed50d62bb39a"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="30" width="100" height="20" forecolor="#CCCCCC" uuid="d37b7d65-91c6-4e7a-b162-9e10c2ceaaf9"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="30" width="100" height="20" forecolor="#CCCCCC" uuid="8b5393bb-dcd5-49ba-859e-594e14e06cbe"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="30" width="100" height="20" forecolor="#CCCCCC" uuid="163fccb9-faad-4b38-a2ef-c3fdbe9b71c0"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="513" y="30" width="59" height="20" forecolor="#CCCCCC" uuid="612e68f9-f5da-4343-b543-25adcf72d07f"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="673" y="30" width="48" height="20" forecolor="#CCCCCC" uuid="26f7f26c-af8e-45fc-934f-96d022e8ff67"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement x="27" y="10" width="65" height="20" uuid="538a0b86-9764-4758-8049-bfdcb44297f5"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="10" width="100" height="20" uuid="882d29d5-071d-4e57-ba8b-5ba18a78ffd7"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="10" width="100" height="20" uuid="e457ae27-79ab-4e41-af85-39927bad58c0"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellidoCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="356" y="10" width="100" height="20" uuid="6962dc76-e5e2-4aa5-8150-d01f6e6c5200"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefonoCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="10" width="142" height="20" uuid="1c00f0d6-b242-4547-b73f-c0e816bb600f"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccionCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="626" y="10" width="126" height="20" uuid="2e9f7bb2-3a52-4362-966a-91f13c5d5595"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="12" y="40" width="729" height="1" uuid="740222d3-5b86-4273-8239-0eae5689f4a9"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="575" y="0" width="177" height="20" uuid="6f035bba-3f87-4028-b25d-1569d01e7dd4"/>
+				<textElement>
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Santiago Adolfo López Ramírez]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

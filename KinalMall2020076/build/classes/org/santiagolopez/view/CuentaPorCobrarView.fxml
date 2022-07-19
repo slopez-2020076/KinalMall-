@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="1099.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.santiagolopez.controller.CuentaPorCobrarController">
+   <children>
+      <Pane layoutX="551.0" layoutY="-128.0" prefHeight="691.0" prefWidth="662.0" rotate="-55.7" style="-fx-background-color: #fff5ee; -fx-background-radius: 50 50 50 50;" />
+      <AnchorPane prefHeight="460.0" prefWidth="170.0" style="-fx-background-color: #28415f;">
+         <children>
+            <Pane layoutX="11.0" layoutY="-23.0" prefHeight="160.0" prefWidth="147.0" style="-fx-background-color: #c0c0c0; -fx-background-radius: 30 30 30 30;">
+               <children>
+                  <Label layoutX="9.0" layoutY="33.0" text="Cuenta Por Cobrar" textFill="#1f2203">
+                     <font>
+                        <Font name="Tahoma Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="105.0" fitWidth="115.0" layoutX="23.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/c.%20por%20cobrar.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <VBox layoutY="170.0" prefHeight="199.0" prefWidth="170.0">
+               <children>
+                  <Button fx:id="btnNuevo" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#nuevo" prefHeight="51.0" prefWidth="201.0" styleClass="button1" stylesheets="@../resource/KinallMall.css" text="Nuevo" textFill="#72745f">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgNuevo" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Nuevo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnEliminar" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#eliminar" prefHeight="51.0" prefWidth="201.0" styleClass="button1" stylesheets="@../resource/KinallMall.css" text="Eliminar" textFill="#72745f">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgEliminar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/559481.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnEditar" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#editar" prefHeight="51.0" prefWidth="201.0" styleClass="button1" stylesheets="@../resource/KinallMall.css" text="Editar" textFill="#72745f">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgEditar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Editar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnReporte" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#reporte" prefHeight="51.0" prefWidth="201.0" styleClass="button1" stylesheets="@../resource/KinallMall.css" text="Reporte" textFill="#72745f">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgReporte" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Report.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <ImageView fitHeight="41.0" fitWidth="49.0" layoutX="65.0" layoutY="395.0" onMouseClicked="#ventanaLocal" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/arrow-left.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblCuentaPorCobrar" layoutX="186.0" layoutY="167.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="258.0" prefWidth="889.0" stylesheets="@../resource/KinallMall.css">
+        <columns>
+          <TableColumn fx:id="colCodigoCuentaPorCobrar" prefWidth="141.0" text="Cod. Cuenta Por Cobrar" />
+            <TableColumn fx:id="colNumeroFactura" minWidth="9.0" prefWidth="100.0" text="Número Factura" />
+            <TableColumn fx:id="colAnio" prefWidth="73.0" text="Año" />
+            <TableColumn fx:id="colMes" prefWidth="91.0" text="Mes" />
+            <TableColumn fx:id="colValorNetoPago" prefWidth="102.0" text="Valor Neto Pago" />
+            <TableColumn fx:id="colEstadoPago" prefWidth="84.0" text="Estado Pago" />
+            <TableColumn fx:id="colCodigoAdministracion" prefWidth="125.0" text="Cod. Administración " />
+            <TableColumn fx:id="colCodigoCliente" prefWidth="85.0" text="Cod. Cliente" />
+            <TableColumn fx:id="colCodigoLocal" prefWidth="87.0" text="Cod. Local" />
+        </columns>
+      </TableView>
+      <GridPane layoutX="203.0" layoutY="20.0" prefHeight="95.0" prefWidth="771.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="192.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="97.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.0" minWidth="0.0" prefWidth="139.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.0" minWidth="10.0" prefWidth="108.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="111.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="125.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Código Cuenta Por Cobrar" textFill="#1f2203">
+               <font>
+                  <Font name="Tahoma Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Código Administración " textFill="#1f2203" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Tahoma Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Mes" textFill="#1f2203" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Tahoma Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Número Factura" textFill="#1f2203" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Tahoma Bold" size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </Label>
+            <Label text="Año" textFill="#1f2203" GridPane.columnIndex="4">
+               <font>
+                  <Font name="Tahoma Bold" size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </Label>
+            <Label text="Valor Neto Pago" textFill="#1f2203" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Tahoma Bold" size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </Label>
+            <Label text="Estado Pago" textFill="#1f2203" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Tahoma Bold" size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </Label>
+            <Label text="Código Cliente" textFill="#1f2203" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Tahoma Bold" size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </Label>
+            <Label text="Código Local" textFill="#1f2203" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Tahoma Bold" size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txtCodigoCuentaPorCobrar" editable="false" GridPane.columnIndex="1" />
+            <TextField fx:id="txtNumeroFactura" editable="false" GridPane.columnIndex="3" />
+            <TextField fx:id="txtAnio" editable="false" GridPane.columnIndex="5" />
+            <TextField fx:id="txtMes" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtValorNetoPago" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="txtEstadoPago" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbCodigoAdministracion" disable="true" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbCodigoCliente" disable="true" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbCodigoLocal" disable="true" prefHeight="25.0" prefWidth="176.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

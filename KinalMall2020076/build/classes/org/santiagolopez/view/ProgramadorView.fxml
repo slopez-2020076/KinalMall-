@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="716.0" style="-fx-background-color: };" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.santiagolopez.controller.ProgramadorController">
+   <children>
+      <Pane layoutX="373.0" layoutY="8.0" onMouseClicked="#menuPrincipal" prefHeight="409.0" prefWidth="497.0" rotate="54.0" style="-fx-background-color: #fff5ee; -fx-background-radius: 50 50 50 50;">
+         <children>
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="120.0" layoutY="16.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true" rotate="-54.1">
+               <image>
+                  <Image url="@../images/image_icon_house_pic_512x512.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="-6.0" layoutY="-8.0" prefHeight="417.0" prefWidth="199.0" style="-fx-background-color: #28415f;">
+         <children>
+            <Pane layoutX="25.0" layoutY="-36.0" prefHeight="190.0" prefWidth="145.0" style="-fx-background-color: #c0c0c0; -fx-background-radius: 30 30 30 30;">
+               <children>
+                  <ImageView cache="true" fitHeight="116.0" fitWidth="109.0" focusTraversable="true" layoutX="20.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" y="5.0">
+                     <image>
+                        <Image url="@../images/Programador.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <VBox layoutX="7.0" layoutY="172.0" prefHeight="304.0" prefWidth="199.0">
+               <children>
+                  <Button fx:id="btnProgramador" mnemonicParsing="false" onAction="#opciones" prefHeight="52.0" prefWidth="199.0" styleClass="button1" stylesheets="@../resource/KinallMall.css" text="Programador" textFill="#72745f">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnKinal" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#opciones" prefHeight="52.0" prefWidth="199.0" styleClass="button1" stylesheets="@../resource/KinallMall.css" text="Administración" textFill="#72745f">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Label fx:id="lblApellidos" layoutX="247.0" layoutY="152.0" prefHeight="38.0" prefWidth="219.0">
+         <font>
+            <Font name="Consolas Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTitulo" layoutX="247.0" layoutY="212.0" prefHeight="38.0" prefWidth="219.0">
+         <font>
+            <Font name="Consolas Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNombres" layoutX="247.0" layoutY="100.0" prefHeight="38.0" prefWidth="219.0">
+         <font>
+            <Font name="Consolas Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
